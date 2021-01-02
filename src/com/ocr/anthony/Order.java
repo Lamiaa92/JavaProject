@@ -34,8 +34,31 @@ public class Order {
     public void runMenu() {
         this.displayAvailableMenu();
         Scanner sc = new Scanner(System.in);
-        int nb = sc.nextInt();
-        this.displaySelectedMenu(nb);
+        int nbMenu = sc.nextInt();
+        this.displaySelectedMenu(nbMenu);
+        switch (nbMenu) {
+            case 1:
+                displayAvailableSide(true);
+                int nbSide = sc.nextInt();
+                displaySelectedSide(nbSide, true);
+                displayAvailableDrink();
+                int nbDrink = sc.nextInt();
+                displaySelectedDrink(nbDrink);
+                break;
+            case 2:
+                displayAvailableSide(true);
+                nbSide = sc.nextInt();
+                displaySelectedSide(nbSide, true);
+                break;
+            case 3:
+                displayAvailableSide(false);
+                nbSide = sc.nextInt();
+                displaySelectedSide(nbSide, false);
+                displayAvailableDrink();
+                nbDrink = sc.nextInt();
+                displaySelectedDrink(nbDrink);
+                break;
+        }
     }
 
     /**
