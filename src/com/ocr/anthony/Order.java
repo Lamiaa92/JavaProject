@@ -6,6 +6,8 @@ public class Order {
     /**
      * Display all available menus in the restaurant.
      */
+    Scanner sc = new Scanner(System.in);
+
     public void displayAvailableMenu() {
         System.out.println("Choix Menu ");
         System.out.println("1- Poulet");
@@ -33,7 +35,6 @@ public class Order {
      */
     public void runMenu() {
         this.displayAvailableMenu();
-        Scanner sc = new Scanner(System.in);
         int nbMenu = sc.nextInt();
         this.displaySelectedMenu(nbMenu);
         switch (nbMenu) {
@@ -121,6 +122,16 @@ public class Order {
         }
     }
 
+    /**
+     * Run asking process for several menus
+     */
+    public void runMenus() {
+        System.out.println("Combien souhaitez vous commander de menu ?");
+        int menuQuantity = sc.nextInt();
+        for (int i = 0; i < menuQuantity; i++){
+            this.runMenu();
+        }
+    }
     /**
      * Display all available sides depending on all sides enable or not.
      * All sides = vegetables, fries and rice
